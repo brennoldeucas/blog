@@ -1,9 +1,15 @@
 <div class="card">
     <div class="card-body">
         <h1>{{postagens.titulo}}</h1>
+        <h6>{{postagens.slug}}</h6>
+        <hr>
+        <p>{{postagens.descricao}}</p>
+        <p>{{postagens.conteudo}}</p>
         <hr>
         <small>Data da publicação: {{postagens.data}}</small>
+        <br>
+        <small>categoria: {{postagens.categoria.nome}}</small>
         <hr>
-        {{postagens.conteudo}}
+        
     </div>
 </div>

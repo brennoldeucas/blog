@@ -74,8 +74,8 @@
         res.send('erro 404!')
     })
 
-    app.get('/postagensRecentes',(req, res)=>{
-        Postagens.findOne({slug: req.params.slug}).lean().then((postagens)=>{
+    app.get('/postagensRecentes/:slug',(req, res)=>{
+        Postagens.findOne({slug: req.params.slug}).populate("categoria").lean().then((postagens)=>{
             if(postagens){
                 res.render('postagens/index', {postagens: postagens})
             }else{
@@ -87,6 +87,7 @@
             res.redirect('/')
         })
 })
+
 
 app.get('/categorias', (req, res)=>{
     Categorias.find().lean().then((categorias)=>{
