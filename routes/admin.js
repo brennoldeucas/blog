@@ -111,7 +111,6 @@ router.post('/categorias/deletar', eAdmin, (req, res) => {
 
 router.get('/postagens', eAdmin, (req, res)=>{
     Postagens.find().populate('categoria').sort({data: "desc"}).lean().then((postagens)=> {
-        console.log("Postagens: ", postagens)
         res.render('admin/postagens', {postagens: postagens})
     }).catch((err)=>{
          req.flash("error_msg", "houve um erro ao listar as postagens")

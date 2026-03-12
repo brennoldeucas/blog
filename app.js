@@ -130,5 +130,7 @@ app.use('/admin', admin)
 const port = process.env.PORT || 8081
 app.listen(port, ()=>{
     console.log('servidor rodando')
+    console.log('banco conectado: ', db.mongoURI)
+    console.log('NODE_ENV: ', process.env.NODE_ENV)
 })
 
