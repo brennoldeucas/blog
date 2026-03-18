@@ -1,48 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/admin">my blog</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <div class="container">
+    <a class="navbar-brand font-weight-bold" href="">MY BLOG</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuResponsivo" aria-controls="menuResponsivo" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto flex-row ">
+    <div class="collapse navbar-collapse" id="menuResponsivo">
+      
+      <ul class="navbar-nav mr-auto flex-column flex-lg-row">
+        <li class="nav-item">
+          <a class="nav-link py-3 py-lg-2 px-3" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-3 py-lg-2 px-3" href="/admin/postagens">Postagens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-3 py-lg-2 px-3" href="/categorias">Categorias</a>
+        </li>
+      </ul>
 
-      <li class="nav-item mx-3">
-        <a class="nav-link" href="/">Home</a>
-      </li>
+      <div class="navbar-nav ml-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+        
+        {{#if user}}
+          <a class="nav-link py-3 py-lg-2 px-3 text-danger" href="/usuarios/logout">Sair</a>
+        {{else}}
+          <a class="nav-link py-3 py-lg-2 px-3" href="/usuarios/login">Login</a>
+          <a class="btn btn-primary btn-sm my-2 ml-lg-3 px-4" href="/usuarios/registro">Registro</a>
+        {{/if}}
 
-      <li class="nav-item mx-3">
-        <a class="nav-link" href="/admin/postagens">Postagens</a>
-      </li>
+        <form class="form-inline w-100 w-lg-auto my-3 my-lg-0 ml-lg-3" action="/admin/posts" method="GET">
+          <div class="input-group w-100">
+            <input class="form-control form-control-sm" type="search" name="busca" placeholder="Buscar...">
+            <div class="input-group-append">
+              <button class="btn btn-outline-light btn-sm" type="submit">Ir</button>
+            </div>
+          </div>
+        </form>
 
-      <li class="nav-item mx-3">
-        <a class="nav-link" href="/categorias">Categorias</a>
-      </li>
-
-    {{#if user}}
-      <li class="nav-item  mx-3">
-        <a class="nav-link" href="/usuarios/logout">Sair</a>
-      </li>
-    {{else}}
-
-    
-
-      <li class="nav-item  mx-3">
-        <a class="nav-link" href="/usuarios/login">login</a>
-      </li>
-
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="/usuarios/registro">Registro</a>
-      </li>
-
-    </ul>
-  {{/if}}
-    <form class="form-inline my-2 my-lg-0" action="/admin/posts" method="GET">
-      <input class="form-control mr-sm-2" type="search" name="busca" placeholder="Buscar posts">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-    
-
+      </div>
+    </div>
   </div>
 </nav>
