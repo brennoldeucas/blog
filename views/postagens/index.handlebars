@@ -1,15 +1,64 @@
-<div class="card">
-    <div class="card-body">
-        <h1>{{postagens.titulo}}</h1>
-        <h6>{{postagens.slug}}</h6>
-        <hr>
-        <p>{{postagens.descricao}}</p>
-        <p>{{postagens.conteudo}}</p>
-        <hr>
-        <small>Data da publicação: {{postagens.data}}</small>
-        <br>
-        <small>categoria: {{postagens.categoria.nome}}</small>
-        <hr>
+<div class="container py-5">
+    <div class="leitura-blur">
+        <h1 class="display-4 font-weight-bold" style="color: white !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+            {{postagens.titulo}}
+        </h1>
         
+        <h6 class="text-white-50" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Slug: {{postagens.slug}}</h6>
+        
+        <hr style="border-top: 1px solid rgba(255,255,255,0.2);">
+        
+        <div style="font-size: 1.3rem; line-height: 1.6; color: white !important; text-shadow: 1px 1px 5px rgba(0,0,0,0.8);">
+            <p><strong>Descrição:</strong> {{postagens.descricao}}</p>
+            <p>{{postagens.conteudo}}</p>
+        </div>
+        
+        <hr style="border-top: 1px solid rgba(255,255,255,0.2);">
+        
+        <div class="d-flex justify-content-between align-items-end">
+            
+            <div class="text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.9);">
+                <small class="d-block">Data da publicação: {{postagens.data}}</small>
+                <small>Categoria: <strong>{{postagens.categoria.nome}}</strong></small>
+            </div>
+            
+            <div class="">
+                <a href="/" class="btn btn-dark btn-lg shadow-lg" style="background-color: #212529e8 !important; border: 1px solid rgba(255,255,255,0.1) !important; color: white !important; padding: 12px 30px; font-weight: bold;">
+                    Voltar para Home
+                </a>
+            </div>
+
+        </div>
     </div>
 </div>
+
+<head>
+    <style>
+
+        body {
+            /* Aqui definimos a imagem de paisagem */
+            background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920&auto=format&fit=crop');
+            
+            /* Ajustes para a imagem preencher a tela perfeitamente */
+            background-size: cover;           /* A imagem estica para cobrir tudo */
+            background-position: center;      /* Centraliza a paisagem */
+            background-attachment: fixed;    /* A imagem fica parada enquanto você rola a página */
+            background-repeat: no-repeat;    /* Não deixa a imagem duplicar */
+            
+            /* Cor de fundo escura de reserva */
+            background-color: #1a1a1a; 
+        }
+
+        /* Melhoria de leitura: deixa os títulos brancos para contrastar com a foto */
+        h1, h2, h3, h4, h5, label {
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        /* Mantém o texto dentro dos CARDS escuro para não estragar a leitura */
+        .card h1, .card h2, .card h3, .card h4, .card p, .card small, .card label {
+            color: #212529 !important;
+            text-shadow: none !important;
+        }
+    </style>
+</head>
