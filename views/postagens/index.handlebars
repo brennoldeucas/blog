@@ -1,5 +1,5 @@
 <div class="container py-5">
-    <div class="leitura-blur">
+    <div>
         <h1 class="display-4 font-weight-bold" style="color: white !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
             {{postagens.titulo}}
         </h1>
@@ -39,17 +39,16 @@
             /* Aqui definimos a imagem de paisagem */
             background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920&auto=format&fit=crop');
             
-            /* Ajustes para a imagem preencher a tela perfeitamente */
-            background-size: cover;           /* A imagem estica para cobrir tudo */
-            background-position: center;      /* Centraliza a paisagem */
-            background-attachment: fixed;    /* A imagem fica parada enquanto você rola a página */
-            background-repeat: no-repeat;    /* Não deixa a imagem duplicar */
+
+            background-size: cover;          
+            background-position: center;      
+            background-attachment: fixed;    
+            background-repeat: no-repeat;   
             
-            /* Cor de fundo escura de reserva */
+
             background-color: #1a1a1a; 
         }
 
-        /* Melhoria de leitura: deixa os títulos brancos para contrastar com a foto */
         h1, h2, h3, h4, h5, label {
             color: white !important;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);

@@ -11,18 +11,50 @@
 <h2 id="postagens">postagens recentes: </h2>
 
 {{#each postagens}}
-<br>
-<div class="card">
+<div class="card mb-4 shadow-sm border-0 card-postagem">
     <div class="card-body">
-        <h3>{{titulo}}</h3>
-        <p>{{descricao}}</p>
-        <a href="/postagensRecentes/{{slug}}"><button class="btn btn-success">leia mais</button></a>
+        <h3 class="font-weight-bold">{{titulo}}</h3>
+        <p class="text-secondary">{{descricao}}</p>
+        <a href="/postagensRecentes/{{slug}}" class="btn btn-success px-4" style="border-radius: 8px;">
+            Leia mais
+        </a>
         <hr>
-        
-        <small>Categoria: {{categoria.nome}}</small><br>
-        <small>Data de publicação: {{data}}</small>
+        <small class="text-muted">Categoria: <strong>{{categoria.nome}}</strong></small><br>
+        <small class="text-muted">Data de publicação: {{data}}</small>
     </div>
 </div>
 {{else}}
-    <h5>nenhuma postagem</h5>
+    <h5>Nenhuma postagem</h5>
 {{/each}}
+
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2f3 0%, #044172a4 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .card-postagem {
+
+        background: linear-gradient(135deg, #eef2f3 0%, #0a4f8831 100%) !important;
+        
+
+        border-radius: 40px 0px 40px 0px !important;
+        
+
+        border: none !important;
+        transition: transform 0.3s ease;
+        }
+
+        .card-postagem:hover {
+            transform: scale(1.02); 
+        }
+
+
+        .card-postagem h3 {
+            color: #044172; 
+        }
+
+    </style>
+</head>
